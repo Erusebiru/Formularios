@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/script.js" defer></script>
+</head>
+<body>
+	<div id="contadorGlobal"></div>
+
+	<div id="formularios">
+
+		<div class="formulario">
+			<form>
+				<div class="pregunta">
+					<span> 1 - ¿Qué respuesta es la correcta?</span>
+					<input type="button" name="restart" class="restart" onclick="resetForm(this.form)" disabled>
+					<input type="button" name="send" class="send" onclick="checkAnswers(this.form)" disabled>
+				</div>
+				</br>
+				<div class="respuesta">
+					<p id="radio1"><label><input type="radio" class="radio" name="answer1" value="correcto" onclick="radioClick(this.form)"> True</label></p>
+					</br>
+					<p id="radio2"><label><input type="radio" class="radio" name="answer1"  onclick="radioClick(this.form)"> False</label></p>
+					</br>
+				</div>
+				<div class="contador">
+					<p>Número de intentos: <label>0</label></p>
+				</div>
+			</form>
+		</div>
+
+		<div class="formulario">
+			<form>
+				<div class="pregunta" disabled>
+					<span> 2 - ¿Qué respuesta es la correcta?</span>
+					<input type="button" name="restart" class="restart" onclick="resetForm(this.form)" disabled>
+					<input type="button" name="send" class="answer2 send" onclick="checkAnswers(this.form)" disabled>
+				</div>
+				</br>
+				<div class="respuesta">
+					<p id="radio3"><label><input type="radio" class="radio" name="answer2" onclick="radioClick(this.form)"> Esta</label></p>
+					</br>
+					<p id="radio4"><label><input type="radio" class="radio" name="answer2" onclick="radioClick(this.form)"> Esta</label></p>
+					</br>
+					<p id="radio5"><label><input type="radio" name="answer2" class="radio" value="correcto" onclick="radioClick(this.form)"> Esta</label></p>
+					</br>
+				</div>
+				<div class="contador">
+					<p>Número de intentos: <label>0</label></p>
+				</div>
+			</form>
+		</div>
+
+		<div class="formulario">
+			<form>
+				<div class="pregunta">
+					<span> 3 - ¿Qué respuesta es la correcta?</span>
+					<input type="button" name="send" class="send" onclick="terceraPregunta(this.form)">
+				</div>
+				</br>
+				<div class="respuesta">
+					<textarea cols="62" name="area"></textarea>
+					</br></br>
+				</div>
+				<p id="labelText1" name="wrong-answer"><label class="text-answer">Debes escribir una respuesta.</label></p>
+				<p id="labelText2" name="text-answer"><label class="text-answer">Correct</label></p>
+			</form>
+		</div>
+
+		<div class="formulario formulario4">
+			<form>
+				<span> 4 - Escribe la palabra correcta en cada frase</span>
+				<input type="button" name="restart" class="restart" onclick="reset4(0,this.form)">
+				<input type="button" name="send" class="send" onclick="pcuatro(0,this.form)">
+				</br>
+				<div class="pregunta">
+					<p id="0">
+						Si más gente valorara el <input type="text" class="respuesta"> más que el oro este mundo sería un lugar más feliz
+						<img src="images/true.png" style="display: none">
+						<img src="images/false.png" style="display: none">
+					</p><!--hogar-->
+					<p id="1">
+						Que la <input type="text" class="respuesta"> te acompañe
+						<img src="images/true.png" style="display: none">
+						<img src="images/false.png" style="display: none">
+					</p><!--fuerza-->
+					<p id="2">
+						Ser o <input type="text" class="respuesta"> ser
+						<img src="images/true.png" style="display: none">
+						<img src="images/false.png" style="display: none">
+					</p><!--no-->
+				</div>
+				<div id="text"></div>
+				</br>
+			<div class="contador">
+				<p>Número de intentos: <label>0</label></p>
+			</div>
+			</form>
+		</div>
+
+	</div>
+	<div id="windowError" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span><br>
+			<h3>Debes rellenar todas las casillas antes de validarlas</h3>
+		</div>
+	</div>
+</body>
+</html>
